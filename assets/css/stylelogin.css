@@ -26,7 +26,7 @@ body, input{
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #4481eb, #04befe);
+    background: linear-gradient(-45deg, #10151d, #131e30);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -97,7 +97,7 @@ form.sign-up-form{
 .input-field i{
     text-align: center;
     line-height: 55px;
-    color: lightblue;
+    color: rgb(37, 76, 89);
     font-size: 1.1rem;
 }
 
@@ -112,7 +112,7 @@ form.sign-up-form{
 }
 
 .input-field input::placeholder{
-    color: #aaa;
+    color: #281d1d;
     font-weight: 500;
 }
 
@@ -122,7 +122,7 @@ form.sign-up-form{
     border: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #5995fd;
+    background-color: #0d293e;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -131,7 +131,7 @@ form.sign-up-form{
 }
 
 .btn:hover{
-    background-color: #4d84e2;
+    background-color: #90a6cc;
 }
 
 .social-text{
@@ -159,8 +159,8 @@ form.sign-up-form{
     transition: 0.3s;
 }
 .social-icon:hover{
-    color: #4481eb;
-    border-color: #4481eb;
+    color: #764c86;
+    border-color: #8416a2;
 }
 
 .panels-container{
