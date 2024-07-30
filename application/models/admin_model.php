@@ -21,17 +21,8 @@ class Admin_model extends CI_Model {
 		$this->db->where('password',$password);
 		return $this->db->get(); //devuelve el resultado
 	}
-	public function listproducts()
-	{
-		$this->db->select('*');
-		$this->db->from('producto');
-		return $this->db->get();  //Devuelve el resultado
-	}
 
-	public function agregarlaptop($data)
-	{
-		$this->db->insert('usuario',$data);
-	}
+
 	public function eliminaruser($iduser)
 	{
 		$this->db->where('idusuario',$iduser);
