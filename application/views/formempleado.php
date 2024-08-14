@@ -16,44 +16,40 @@ include 'inc/sidebarmenu.php';
                     </p>
                     <?php
                     $attributes = array('class' => 'forms-sample');
-                    echo form_open_multipart("PageAdmin/agregarproductobd", $attributes);
+                    echo form_open_multipart("Empleados/agregaremple", $attributes);
                     ?>
                     
                     <div class="form-group">
-                        <label>Modelo</label>
-                        <input type="text" name="modelo" class="form-control" placeholder="Modelo" require>
+                        <label>Nombre(s)</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre(s)" required>
                     </div>
                     <div class="form-group">
-                        <label>Marca</label>
-                        <input type="text" name="marca" class="form-control" placeholder="Marca" require>
+                        <label>Primer Apellido</label>
+                        <input type="text" name="apellido1" class="form-control" placeholder="Primer Apellido" required>
                     </div>
                     <div class="form-group">
-                        <label>Almacenamiento</label>
-                        <input type="text" name="almacenamiento" class="form-control" placeholder="Almacenamiento" require>
+                        <label>Segundo Apellido</label>
+                        <input type="text" name="apellido2" class="form-control" placeholder="Segundo Apellido">
                     </div>
                     <div class="form-group">
-                        <label>RAM</label>
-                        <input type="text" name="ram" class="form-control" placeholder="RAM" require>
+                        <label>Cedula de Identidad</label>
+                        <input type="text" name="ci" class="form-control" placeholder="CI" required>
                     </div>
                     <div class="form-group">
-                        <label>CPU</label>
-                        <input type="text" name="cpu" class="form-control" placeholder="CPU" require>
+                        <label>Correo Electronico</label>
+                        <input type="email" name="email" class="form-control" placeholder="Correo Electronico" required>
                     </div>
                     <div class="form-group">
-                        <label>GPU</label>
-                        <input type="text" name="gpu" class="form-control" placeholder="GPU" require>
+                        <label>Telefono</label>
+                        <input type="number" name="telefono" class="form-control" placeholder="Telefono" required>
                     </div>
                     <div class="form-group">
-                        <label>Cantidad</label>
-                        <input type="number" name="cantidad" class="form-control" placeholder="Cantidad" require>
+                        <label>Usuario</label>
+                        <input type="text" name="usuario" class="form-control" placeholder="Ingrese el usuario en minusculas" required>
                     </div>
                     <div class="form-group">
-                        <label>Categoria</label>
-                        <input type="text" name="categoria" class="form-control" placeholder="Categoria" require>
-                    </div>
-                    <div class="form-group">
-                        <label>Precio</label>
-                        <input type="number" name="precio" class="form-control" placeholder="Almacenamiento" require>
+                        <label>Contraseña</label>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
                     </div>
                     <button type="submit" class="btn btn-success mr-2">Registrar</button>
                     <button class="btn btn-light">Cancelar</button>
