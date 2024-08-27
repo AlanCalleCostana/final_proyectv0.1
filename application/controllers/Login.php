@@ -28,23 +28,20 @@ class Login extends CI_Controller {
 		$login=$_POST['usuario'];
 		$password=sha1($_POST['password']);
 
-		echo $login;
-		echo $password;
 		$consulta=$this->admin_model->validar($login,$password);
-
-		echo $consulta->num_rows();
 
 		if($consulta->num_rows()>0)
 		{
-			echo 'inicio de sesion';
+			//echo 'inicio de sesion';
 			//usuario valido
 			foreach($consulta->result() as $row)
 			{
 
-				$this->session->set_userdata('idusuario',$row->idusuario);
+				$this->session->set_userdata('idusuario',$row->id);
 				$this->session->set_userdata('usuario',$row->usuario);
-				//$this->session->set_userdata('tipo',$row->tipo);
-
+				$this->session->set_userdata('nombre',$row->nombre);
+				$this->session->set_userdata('rol',$row->rol);
+				
 				redirect('PageAdmin/main','refresh');
 			}
 		}
