@@ -8,7 +8,7 @@ include 'inc/sidebarmenu.php';
 <div class="content-wrapper">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Lista de los Empleados Registrados</h4>
+      <h4 class="card-title">Lista de los Empleados Eliminados</h4>
       <div class="row">
         <div class="col-12">
           <div class="table-responsive">
@@ -41,7 +41,7 @@ include 'inc/sidebarmenu.php';
                     </td> -->
                     <td>
                       <?php
-                      echo form_open_multipart("admins/modificaradmin");
+                      echo form_open_multipart("empleados/modificar");
                       ?>
                       <input type="hidden" name="id" value="<?php echo $row->id; ?>">
                       <button class="btn btn-outline-success">Modificar</button>
@@ -50,8 +50,8 @@ include 'inc/sidebarmenu.php';
                       ?>
                     </td>
                     <td>
-                      <?php
-                      echo form_open_multipart("admins/eliminaradmin");
+                    <?php
+                      echo form_open_multipart("empleados/eliminarempleado");
                       ?>
                       <input type="hidden" name="id" value="<?php echo $row->id; ?>">
                       <button class="btn btn-outline-danger">Eliminar</button>
