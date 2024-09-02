@@ -39,6 +39,12 @@ class Empleados extends CI_Controller
         $data['usuario'] = $lista;
         $this->load->view('tableempleados', $data);
     }
+    public function listeliminados()
+    {
+        $lista = $this->emple_model->listeliminados();
+        $data['usuario'] = $lista;
+        $this->load->view('tableeliminados', $data);
+    }
     public function Modificar()
     {
         $id = $_POST['id'];
