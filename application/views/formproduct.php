@@ -16,7 +16,7 @@ include 'inc/sidebarmenu.php';
                     </p>
                     <?php
                     $attributes = array('class' => 'forms-sample');
-                    echo form_open_multipart("PageAdmin/agregarproductobd", $attributes);
+                    echo form_open_multipart("producto/agregarproductobd", $attributes);
                     ?>
                     
                     <div class="form-group">

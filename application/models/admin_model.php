@@ -3,13 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_model extends CI_Model {
 
-	public function listusers()
+	public function listadmins()
 	{
 		$this->db->select('*');
 		$this->db->from('usuario');
+		$this->db->where('rol',3);
+		$this->db->where('estado',1);
 		return $this->db->get();  //Devuelve el resultado
 	}
-	public function agregarusuario($data)
+	public function agregaradmin($data)
 	{
 		$this->db->insert('usuario',$data);
 	}
@@ -22,11 +24,23 @@ class Admin_model extends CI_Model {
 		return $this->db->get(); //devuelve el resultado
 	}
 
-
-	public function eliminaruser($iduser)
+	public function recuperaradmin($id)
 	{
-		$this->db->where('idusuario',$iduser);
-		$this->db->delete('usuario');
+		$this->db->select('*');
+		$this->db->from('usuario');
+		$this->db->where('id',$id);
+		return $this->db->get(); //devuelve el resultado
+	}
+	public function modificaradmin($id,$data)
+	{
+        $this->db->set('ultimaActualizacion', 'CURRENT_TIMESTAMP', FALSE);
+		$this->db->where('id',$id);
+		$this->db->update('usuario',$data);	
 	}
 
+	public function eliminaradmin($id,$data)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('usuario',$data);
+	}
 }

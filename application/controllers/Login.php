@@ -42,7 +42,12 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('nombre',$row->nombre);
 				$this->session->set_userdata('rol',$row->rol);
 				
-				redirect('PageAdmin/main','refresh');
+				if ($row->rol==1) {
+					redirect('tienda/index','refresh');
+				}else{
+					redirect('PageAdmin/main','refresh');
+				}
+				//redirect('PageAdmin/main','refresh');
 			}
 		}
 		else

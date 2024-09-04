@@ -3,7 +3,7 @@
   <ul class="nav nav-tabs" id="setting-panel" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
-        aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+        aria-controls="todo-section" aria-expanded="true">MENU</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab"
@@ -14,6 +14,29 @@
     <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
       aria-labelledby="todo-section">
       <div class="add-items d-flex px-3 mb-0">
+        <?php
+        if ($this->session->userdata('rol') == 3) {
+          $attributes = array('class' => 'form w-100');
+          echo form_open_multipart("admins/modificaradmin", $attributes);
+          ?>
+          <div class="form-group d-flex">
+            <input type="hidden" name="id" value=2>
+            <button type="submit" class="add btn btn-primary">Mi cuenta</button>
+          </div>
+          <?php
+          echo form_close();
+        } else {
+          $attributes = array('class' => 'form w-100');
+          echo form_open_multipart("empleados/modificar", $attributes);
+          ?>
+          <div class="form-group d-flex">
+            <input type="hidden" name="id" value=2>
+            <button type="submit" class="add btn btn-primary">Mi cuenta</button>
+          </div>
+          <?php
+          echo form_close();
+        }
+        ?>
         <form class="form w-100">
           <div class="form-group d-flex">
             <a href="<?php echo base_url(); ?>index.php/login/logout">
@@ -22,71 +45,49 @@
           </div>
         </form>
       </div>
-      <div class="list-wrapper px-3">
-        <ul class="d-flex flex-column-reverse todo-list">
-          <li>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox">
-                Team review meeting at 3.00 PM
-              </label>
+      <div class="add-items d-flex px-3 mb-0">
+
+        <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-4"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel-4">New message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <?php
+                echo form_open_multipart("Empleados/cambio");
+                ?>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Usuario:</label>
+                  <input type="text" class="form-control" id="recipient-name" name="usuario" Required>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Contraseña:</label>
+                  <input type="password" class="form-control" id="recipient-name" name="password" required>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-success">Cambiar</button>
+                  <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                </div>
+                <?php
+                echo form_close();
+                ?>
+              </div>
             </div>
-            <i class="remove mdi mdi-close-circle-outline"></i>
-          </li>
-          <li>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox">
-                Prepare for presentation
-              </label>
-            </div>
-            <i class="remove mdi mdi-close-circle-outline"></i>
-          </li>
-          <li>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox">
-                Resolve all the low priority tickets due today
-              </label>
-            </div>
-            <i class="remove mdi mdi-close-circle-outline"></i>
-          </li>
-          <li class="completed">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox" checked="">
-                Schedule meeting for next week
-              </label>
-            </div>
-            <i class="remove mdi mdi-close-circle-outline"></i>
-          </li>
-          <li class="completed">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox" checked="">
-                Project review
-              </label>
-            </div>
-            <i class="remove mdi mdi-close-circle-outline"></i>
-          </li>
-        </ul>
-      </div>
-      <div class="events py-4 border-bottom px-3">
-        <div class="wrapper d-flex mb-2">
-          <i class="mdi mdi-circle-outline text-primary mr-2"></i>
-          <span>Feb 11 2018</span>
+          </div>
         </div>
-        <p class="mb-0 font-weight-thin text-gray">Creating component page</p>
-        <p class="text-gray mb-0">build a js based app</p>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal-4"
+          data-whatever="">Cambiar Usuario y contraseña</button>
+
       </div>
-      <div class="events pt-4 px-3">
-        <div class="wrapper d-flex mb-2">
-          <i class="mdi mdi-circle-outline text-primary mr-2"></i>
-          <span>Feb 7 2018</span>
-        </div>
-        <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
-        <p class="text-gray mb-0 ">Call Sarah Graves</p>
-      </div>
+
+
+
+      
     </div>
     <!-- To do section tab ends -->
     <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">

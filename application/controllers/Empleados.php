@@ -18,7 +18,7 @@ class Empleados extends CI_Controller
         $data['usuario'] = strtolower($_POST['usuario']);
         $data['password'] = sha1($_POST['password']);
         $data['rol'] = 2;
-        $data['idUsuario'] = ($this->session->userdata('idusuario'));
+        $data['idUsuario'] = $this->session->userdata('idusuario');
 
         $this->emple_model->agregaremple($data);
 

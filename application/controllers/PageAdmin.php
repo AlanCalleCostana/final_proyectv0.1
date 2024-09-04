@@ -39,6 +39,15 @@ class PageAdmin extends CI_Controller {
 	{
 		$this->load->view('formproduct');
 	}
+	public function formventa()
+	{
+		$data['infoproductos']=$this->venta_model->listproducts();
+		$this->load->view('formventa',$data);
+	}
+	public function formemple()
+	{
+		$this->load->view('formempleado');
+	}
 	public function agregarproductobd()
 	{
 		//lado izquierda coincide con el nombre de la base de datos, de las columnas

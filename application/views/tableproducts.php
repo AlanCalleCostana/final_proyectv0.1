@@ -21,11 +21,10 @@ include 'inc/sidebarmenu.php';
                   <th>Alamcenamiento</th>
                   <th>RAM</th>
                   <th>Cantidad</th>
-                  <th>GPU</th>
                   <th>CPU</th>
+                  <th>GPU</th>
                   <th>Categoria</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
+                  <th>Precio Bs.</th>
                 </tr>
               </thead>
               <?php
@@ -38,20 +37,17 @@ include 'inc/sidebarmenu.php';
                   <td><?php echo $row->marca; ?></td>
                   <td><?php echo $row->almacenamiento; ?></td>
                   <td><?php echo $row->ram; ?></td>
+                  <td><?php echo $row->stock; ?></td>
                   <td><?php echo $row->cpu; ?></td>
                   <td><?php echo $row->gpu; ?></td>
                   <td><?php echo $row->categoria; ?></td>
                   <td><?php echo $row->precio; ?></td>
-                  <td><?php echo $row->cantidad; ?></td>
-                  <td>
-                    <label class="badge badge-info">On hold</label>
-                  </td>
                   <td>
                     <?php
                     
                     echo form_open_multipart("Producto/modificar");
                     ?>
-                    <input type="hidden" name="idproducto" value="<?php echo $row->idproducto; ?>">
+                    <input type="hidden" name="idproducto" value="<?php echo $row->id; ?>">
                     <button class="btn btn-outline-warning">Modificar</button>
                     <?php
                     echo form_close();
@@ -59,9 +55,9 @@ include 'inc/sidebarmenu.php';
                   </td>
                   <td>
                     <?php
-                    echo form_open_multipart("");
+                    echo form_open_multipart("producto/eliminarproducto");
                     ?>
-                    <input type="hidden" name="idproducto" value="<?php echo $row->idproducto; ?>">
+                    <input type="hidden" name="idproducto" value="<?php echo $row->id; ?>">
                     <button class="btn btn-outline-danger">Eliminar</button>
                     <?php
                     echo form_close();

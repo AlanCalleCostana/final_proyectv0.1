@@ -8,10 +8,17 @@
                 </div>
                 <div class="profile-name">
                     <p class="name">
-                    <?php echo $this->session->userdata('usuario'); ?>
+                        <?php echo $this->session->userdata('nombre'); ?>
                     </p>
                     <p class="designation">
-                        Super Admin
+                        <?php
+                        if ($this->session->userdata('rol') == 3) {
+                            echo 'Administrador';
+                        } else {
+                            echo 'Empleado';
+                        }
+                        //echo $this->session->userdata('tipo');
+                        ?>
                     </p>
                 </div>
             </div>
@@ -24,23 +31,33 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages\widgets.html">
-                <i class="icon-bag menu-icon"></i>
-                <span class="menu-title">Ventas</span>
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false"
                 aria-controls="form-elements">
-                <i class="icon-flag menu-icon"></i>
-                <span class="menu-title">Formularios de Registro</span>
+                <i class="icon-bag menu-icon"></i>
+                <span class="menu-title">Ventas</span>
                 <span class="badge badge-danger">3</span>
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>index.php/pageadmin/formproduct">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>index.php/pageadmin/formemple">Empleados</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages\forms\validation.html">Administrador</a></li> 
+                    <li class="nav-item"><a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/pageadmin/formventa">Realizar Venta</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements2" aria-expanded="false"
+                aria-controls="form-elements2">
+                <i class="icon-flag menu-icon"></i>
+                <span class="menu-title">Formularios de Registro</span>
+                <span class="badge badge-danger">3</span>
+            </a>
+            <div class="collapse" id="form-elements2">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/pageadmin/formproduct">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/pageadmin/formemple">Empleados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages\forms\validation.html">Administrador</a></li>
                 </ul>
             </div>
         </li>
@@ -52,10 +69,16 @@
             </a>
             <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/pageadmin/listusers">Productos</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/pageadmin/listusers">Administradores</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/pageadmin/listusers">Usuarios</a></li>
-                    </li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/producto/listproducts">Productos</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/admins/listadmins">Administradores</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/empleados/listempleados">Empleados</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/empleados/listempleados">Ventas</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="<?php echo base_url(); ?>index.php/empleados/listeliminados">Eliminados</a></li>
                 </ul>
             </div>
         </li>
@@ -67,12 +90,13 @@
             </a>
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/login/index"> Login </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages\samples\login-2.html"> Web Tienda </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/login/index">
+                            Login
+                        </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/tienda/index"> Web Tienda </a></li>
                 </ul>
             </div>
         </li>
-
         <li class="nav-item">
             <a class="nav-link" href="pages\apps\calendar.html">
                 <i class="icon-calendar menu-icon"></i>

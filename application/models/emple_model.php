@@ -11,6 +11,14 @@ class Emple_model extends CI_Model {
         $this->db->where('estado',1);
 		return $this->db->get();  //Devuelve el resultado
 	}
+	public function listeliminados()
+	{
+		$this->db->select('*');
+		$this->db->from('usuario');
+        $this->db->where('rol',2);
+        $this->db->where('estado',0);
+		return $this->db->get();
+	}
 	public function agregaremple($data)
 	{
 		$this->db->insert('usuario',$data);
@@ -41,7 +49,7 @@ class Emple_model extends CI_Model {
 	{
         $this->db->set('ultimaActualizacion', 'CURRENT_TIMESTAMP', FALSE);
 		$this->db->where('id',$id);
-		$this->db->update('usuario',$data);	
+		$this->db->update('usuario',$data);
 	}
 
 	public function eliminarempleado($id,$data)

@@ -13,7 +13,7 @@ include 'inc/sidebarmenu.php';
                         <i class="mdi mdi-account-outline icon-lg text-success"></i>
                         <div class="ml-3">
                             <p class="mb-0">Administradores</p>
-                            <h6>12</h6>
+                            <h6>1</h6>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ include 'inc/sidebarmenu.php';
                         <i class="mdi mdi-laptop icon-lg text-warning"></i>
                         <div class="ml-3">
                             <p class="mb-0">Inventario</p>
-                            <h6>2346</h6>
+                            <h6>15</h6>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ include 'inc/sidebarmenu.php';
                         <i class="mdi mdi-cart icon-lg text-info"></i>
                         <div class="ml-3">
                             <p class="mb-0">Ventas</p>
-                            <h6>896546</h6>
+                            <h6>3</h6>
                         </div>
                     </div>
                 </div>
@@ -52,13 +52,14 @@ include 'inc/sidebarmenu.php';
                         <i class="mdi mdi-shopping icon-lg text-danger"></i>
                         <div class="ml-3">
                             <p class="mb-0">Pedidos</p>
-                            <h6>$ 56000</h6>
+                            <h6>5</h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-lg-4 d-flex flex-column">
             <div class="row flex-grow">

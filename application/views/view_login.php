@@ -26,7 +26,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-6 input-field">
-                            <i class="fa-solid fa-user"></i>
+                            <i class="fas fa-user"></i>
                             <input type="text" name="usuario" placeholder="Usuario">
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-6 input-field">
@@ -55,7 +55,7 @@
 
                 <?php
                 $attributes = array('class' => 'sign-up-form');
-                echo form_open_multipart("login/agregaruserbd", $attributes);
+                echo form_open_multipart("users/agregaruser", $attributes);
                 ?>
                 <h2 class="title">Registrarse</h2>
                 <div class="input-field">
